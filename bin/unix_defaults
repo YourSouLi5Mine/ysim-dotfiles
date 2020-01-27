@@ -1,0 +1,146 @@
+#!/bin/bash
+
+# Set custom unix defaults
+
+# Apt
+# ------------------------------------------------------------------------------
+
+# Install curl, interface themes and the font
+sudo apt install -y curl arc-theme paper-icon-theme breeze-cursor-theme fonts-firacode
+
+# Images
+# ------------------------------------------------------------------------------
+
+# Download the wallpaper/screensaver/user pictures
+curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/boku-no-hero.png -o ~/Pictures/boku-no-hero.png
+curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/kakegurui.png -o ~/Pictures/kakegurui.png
+curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/kirby.png -o ~/Pictures/kirby.png
+
+# Set wallpaper
+gsettings set org.gnome.desktop.background picture-uri ~/Pictures/boku-no-hero.png
+
+# Set screensaver
+gsettings set org.gnome.desktop.screensaver picture-uri ~/Pictures/kakegurui.png
+
+# General UI/UX
+# ------------------------------------------------------------------------------
+
+# Add month and number of day to the clock
+gsettings set org.gnome.desktop.interface clock-show-date true
+
+# Set themes installed above
+gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
+gsettings set org.gnome.desktop.interface cursor-theme 'Breeze_Snow'
+
+# Set font sizes
+gsettings set org.gnome.desktop.interface font-name 'Fira Code Italic 11'
+gsettings set org.gnome.desktop.interface document-font-name 'Fira Code 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Code 11'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Code Medium 12' 
+
+# Hotkeys
+# ------------------------------------------------------------------------------
+
+# Move between workspaces the vim way
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up ['<Super>k']
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down ['<Super>j']
+
+# Move windows between workspaces the vim way too
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up ['<Ctrl><Alt><Super>k']
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down ['<Ctrl><Alt><Super>j']
+
+# Disable toggle hotkey
+gsettings set org.gnome.desktop.wm.keybindings toggle-overview []
+
+# Run command
+gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog ['<Super>s']
+
+# Close window
+gsettings set org.gnome.desktop.wm.keybindings close ['<Super>w']
+
+# Toggle fullscreen
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen ['<Primary><Alt><Super>f']
+
+# Maximize window
+gsettings set org.gnome.desktop.wm.keybindings maximize ['<Primary><Alt><Super>m']
+
+# Unmaximize window
+gsettings set org.gnome.desktop.wm.keybindings unmaximize ['<Primary><Alt><Super>n']
+
+# Swap ctrl-caps and alt-win
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'altwin:swap_alt_win']"
+
+# Open home
+gsettings set org.gnome.settings-daemon.plugins.media-keys home '<Super>e'
+
+# Open terminal
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
+
+# Open default browser
+gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Super>r'
+
+# Lock screen
+gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Primary><Super>q'
+
+# Decrease font size
+gsettings set org.gnome.settings-daemon.plugins.media-keys decrease-text-size '<Super>minus'
+
+# Increase font size
+gsettings set org.gnome.settings-daemon.plugins.media-keys increase-text-size '<Super>equal'
+
+# Split window to left
+gsettings set org.gnome.mutter.keybindings toggle-tiled-left '<Primary><Alt><Super>Left'
+
+# Split window to right
+gsettings set org.gnome.mutter.keybindings toggle-tiled-right '<Primary><Alt><Super>Right'
+
+# General configurations
+# ------------------------------------------------------------------------------
+
+# Disable extensions
+gsettings set org.gnome.shell disable-user-extensions true
+
+# Enable night light
+gsettings set org.gnome.settings-daemon.plugins.color nigh-light-enabled true
+
+# Disable notifications in lock screen
+gsettings set org.gnome.desktop.notifications show-in-lock-screen  false
+
+
+# Dock UI/UX
+# ------------------------------------------------------------------------------
+
+# Hide dock unless mouse is over it
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+
+# Dock at the bottom
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+
+# Transparent dock
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
+settings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.0
+
+# Center dock
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+
+# Terminal
+# ------------------------------------------------------------------------------
+
+# Get default profile
+profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
+profile=${profile:1:-1} # remove leading and trailing single quotes
+
+# Rename profile
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" visible-name 'ysim'
+
+# Transparent terminal
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-transparency false
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-transparent-background true
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" background-transparency-percent 10
+
+# Unlimited scrollbar
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollback-unlimited true
+
+# Keyboard rate. First number is the time to wait before the key pressed is repeated at the second number which is the rate
+xset r rate 300 50
