@@ -43,30 +43,30 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Code Medium 1
 # ------------------------------------------------------------------------------
 
 # Move between workspaces the vim way
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up ['<Super>k']
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down ['<Super>j']
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Super>k']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Super>j']"
 
 # Move windows between workspaces the vim way too
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up ['<Ctrl><Alt><Super>k']
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down ['<Ctrl><Alt><Super>j']
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Ctrl><Alt><Super>k']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Ctrl><Alt><Super>j']"
 
 # Disable toggle hotkey
-gsettings set org.gnome.desktop.wm.keybindings toggle-overview []
+gsettings set org.gnome.shell.keybindings toggle-overview []
 
 # Run command
-gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog ['<Super>s']
+gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog "['<Super>s']"
 
 # Close window
-gsettings set org.gnome.desktop.wm.keybindings close ['<Super>w']
+gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 
 # Toggle fullscreen
-gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen ['<Primary><Alt><Super>f']
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Primary><Alt><Super>f']"
 
 # Maximize window
-gsettings set org.gnome.desktop.wm.keybindings maximize ['<Primary><Alt><Super>m']
+gsettings set org.gnome.desktop.wm.keybindings maximize "['<Primary><Alt><Super>m']"
 
 # Unmaximize window
-gsettings set org.gnome.desktop.wm.keybindings unmaximize ['<Primary><Alt><Super>n']
+gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Primary><Alt><Super>n']"
 
 # Swap ctrl-caps and alt-win
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'altwin:swap_alt_win']"
@@ -90,10 +90,10 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys decrease-text-size '<
 gsettings set org.gnome.settings-daemon.plugins.media-keys increase-text-size '<Super>equal'
 
 # Split window to left
-gsettings set org.gnome.mutter.keybindings toggle-tiled-left '<Primary><Alt><Super>Left'
+gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Primary><Alt><Super>Left']"
 
 # Split window to right
-gsettings set org.gnome.mutter.keybindings toggle-tiled-right '<Primary><Alt><Super>Right'
+gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Primary><Alt><Super>Right']"
 
 # General configurations
 # ------------------------------------------------------------------------------
