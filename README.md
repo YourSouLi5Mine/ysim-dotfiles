@@ -1,4 +1,4 @@
-# ysim dotfiles :trollface:
+# ysim dotfiles :sunglasses:
 by: (Jorge Precich)
 compatibility: Linux
 
