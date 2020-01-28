@@ -1,0 +1,21 @@
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+sudo add-apt-repository universe
+sudo add-apt-repository multiverse
+sudo add-apt-repository -u ppa:snwh/ppa
+
+sudo apt update
+
+sudo apt install -y google-chrome-stable git gnome-tweaks steam gparted
+sudo snap install slack --classic
+sudo snap install spotify
+
+git config --global user.name "YourSouLi5Mine"
+git config --global user.email "precichysim@gmail.com"
+
+curl -L https://gist.githubusercontent.com/YourSouLi5Mine/cf51c12e521f7ff3a4fe494fc1647503/raw/c8d4a53c150020e920092c8363bba95c5c9d2c27/id_rsa -o ~/.ssh/id_rsa
+curl -L https://gist.githubusercontent.com/YourSouLi5Mine/cf51c12e521f7ff3a4fe494fc1647503/raw/c8d4a53c150020e920092c8363bba95c5c9d2c27/id_rsa.pub -o ~/.ssh/id_rsa.pub
+
+chmod 600 ~/.ssh/id_rsa 

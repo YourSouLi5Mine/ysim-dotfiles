@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Set custom unix defaults
 
@@ -6,15 +6,15 @@
 # ------------------------------------------------------------------------------
 
 # Install curl, interface themes and the font
-sudo apt install -y curl arc-theme paper-icon-theme breeze-cursor-theme fonts-firacode
+sudo apt install -y arc-theme paper-icon-theme breeze-cursor-theme fonts-firacode
 
 # Images
 # ------------------------------------------------------------------------------
 
 # Download the wallpaper/screensaver/user pictures
-curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/boku-no-hero.png -o ~/Pictures/boku-no-hero.png
-curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/kakegurui.png -o ~/Pictures/kakegurui.png
-curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/kirby.png -o ~/Pictures/kirby.png
+#curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/boku-no-hero.png -o ~/Pictures/boku-no-hero.png
+#curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/kakegurui.png -o ~/Pictures/kakegurui.png
+#curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/kirby.png -o ~/Pictures/kirby.png
 
 # Set wallpaper
 gsettings set org.gnome.desktop.background picture-uri ~/Pictures/boku-no-hero.png
@@ -47,29 +47,26 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Super>
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Super>j']"
 
 # Move windows between workspaces the vim way too
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Ctrl><Alt><Super>k']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Ctrl><Alt><Super>j']"
-
-# Disable toggle hotkey
-gsettings set org.gnome.shell.keybindings toggle-overview []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Super>k']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift><Super>j']"
 
 # Run command
-gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog "['<Super>s']"
+gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog "['<Super>f']"
 
 # Close window
-gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
+gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
 
 # Toggle fullscreen
-gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Primary><Alt><Super>f']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Shift><Super>f']"
 
 # Maximize window
-gsettings set org.gnome.desktop.wm.keybindings maximize "['<Primary><Alt><Super>m']"
+gsettings set org.gnome.desktop.wm.keybindings maximize "['<Shift><Super>m']"
 
 # Unmaximize window
-gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Primary><Alt><Super>n']"
+gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Shift><Super>n']"
 
 # Swap ctrl-caps and alt-win
-gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'altwin:swap_alt_win']"
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'altwin:swap_alt_win', 'compose:lwin']"
 
 # Open home
 gsettings set org.gnome.settings-daemon.plugins.media-keys home '<Super>e'
@@ -80,20 +77,11 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
 # Open default browser
 gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Super>r'
 
-# Lock screen
-gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Primary><Super>q'
-
 # Decrease font size
 gsettings set org.gnome.settings-daemon.plugins.media-keys decrease-text-size '<Super>minus'
 
 # Increase font size
 gsettings set org.gnome.settings-daemon.plugins.media-keys increase-text-size '<Super>equal'
-
-# Split window to left
-gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Primary><Alt><Super>Left']"
-
-# Split window to right
-gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Primary><Alt><Super>Right']"
 
 # General configurations
 # ------------------------------------------------------------------------------
@@ -133,6 +121,9 @@ profile=${profile:1:-1} # remove leading and trailing single quotes
 
 # Rename profile
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" visible-name 'ysim'
+
+# Dark variant
+gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'dark'
 
 # Transparent terminal
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-transparency false
