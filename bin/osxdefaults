@@ -10,20 +10,6 @@ sudo add-apt-repository -u ppa:snwh/ppa
 sudo apt update
 sudo apt install -y arc-theme paper-icon-theme breeze-cursor-theme fonts-firacode
 
-# Images
-# ------------------------------------------------------------------------------
-
-# Download the wallpaper/screensaver/user pictures
-#curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/boku-no-hero.png -o ~/Pictures/boku-no-hero.png
-#curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/kakegurui.png -o ~/Pictures/kakegurui.png
-#curl -L https://github.com/YourSouLi5Mine/ysim-dotfiles/raw/master/files/kirby.png -o ~/Pictures/kirby.png
-
-# Set wallpaper
-gsettings set org.gnome.desktop.background picture-uri ~/Pictures/boku-no-hero.png
-
-# Set screensaver
-gsettings set org.gnome.desktop.screensaver picture-uri ~/Pictures/kakegurui.png
-
 # General UI/UX
 # ------------------------------------------------------------------------------
 
@@ -84,6 +70,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys decrease-text-size '<
 
 # Increase font size
 gsettings set org.gnome.settings-daemon.plugins.media-keys increase-text-size '<Super>equal'
+
+# Lock screen
+gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Shift><Super>q']"
 
 # General configurations
 # ------------------------------------------------------------------------------

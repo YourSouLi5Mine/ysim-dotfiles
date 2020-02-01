@@ -6,8 +6,6 @@ compatibility: Linux
 
 The installation will overwrite existing dotfiles in your $HOME and `.dotfiles, .vim` directories.
 
-Default shell zsh: `chsh -s $(which zsh)`
-
 ## How to install
 
 ```
@@ -44,13 +42,20 @@ Further information: [TPM](https://github.com/tmux-plugins/tpm)
 
 [Aliases](/shell/shell_aliases)
 [Zprezto](https://github.com/sorin-ionescu/prezto/tree/master/modules)
-Here are the prezto shortcust I'm using:
+Here are the prezto shortcuts I'm using:
 
 ### Custom UNIX defaults
 
-```
-unix_defaults
-```
+`osxdefaults`
+
+## Change desktop background
+
+`background url image_name`
+
+## Change desktop screensaver
+
+`screensaver url image_name`
+
 
 ### WYSIWYG
 
