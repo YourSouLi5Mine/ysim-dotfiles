@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 2 ]]; then
+  curl -L $1 -o ~/Pictures/$2.png
+  gsettings set org.gnome.desktop.background picture-uri ~/Pictures/$2.png
+  echo "Background changed"
+else
+  echo "Wrong number of arguments"
+  echo "Usage: background url image_name"
+fi
