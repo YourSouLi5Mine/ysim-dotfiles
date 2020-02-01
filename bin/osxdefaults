@@ -6,6 +6,8 @@
 # ------------------------------------------------------------------------------
 
 # Install curl, interface themes and the font
+sudo add-apt-repository -u ppa:snwh/ppa
+sudo apt update
 sudo apt install -y arc-theme paper-icon-theme breeze-cursor-theme fonts-firacode
 
 # Images
