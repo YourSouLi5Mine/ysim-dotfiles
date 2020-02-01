@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 2 ]]; then
+  curl -L $1 -o ~/Pictures/$2.png
+  gsettings set org.gnome.desktop.screensaver picture-uri ~/Pictures/$2.png
+  echo "Screensaver changed"
+else
+  echo "Wrong number of arguments"
+  echo "Example: lockscreen url image_name"
+fi
