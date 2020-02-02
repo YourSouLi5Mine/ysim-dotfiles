@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+source $HOME/.dotfiles/lib/utils
+
+install_rvm() {
+  if type_exists "rvm"; then
+    header "rvm allready installed"
+  else
+    header "rvm not found, installing..."
+    sudo apt-add-repository -y ppa:rael-gc/rvm
+    sudo apt update
+    sudo apt install rvm
+  fi
+}
+
+install_rvm

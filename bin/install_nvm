@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source $HOME/.dotfiles/lib/utils
+source $HOME/.nvm/nvm.sh;
+
+install_nvm() {
+  if type_exists "nvm"; then
+    header "nvm already installed"
+  else
+    header "nvm not found, installing..."
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+  fi
+}
+
+install_nvm
