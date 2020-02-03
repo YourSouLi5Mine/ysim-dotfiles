@@ -42,7 +42,7 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift>
 gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog "['<Super>f']"
 
 # Close window
-gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
+gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 
 # Toggle fullscreen
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Shift><Super>f']"

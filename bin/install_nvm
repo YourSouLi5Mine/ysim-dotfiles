@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-source $HOME/.dotfiles/lib/utils
+source ./lib/utils
 source $HOME/.nvm/nvm.sh;
 
 install_nvm() {
-  if type_exists "nvm"; then
+  if command_exists "nvm"; then
     header "nvm already installed"
   else
     header "nvm not found, installing..."

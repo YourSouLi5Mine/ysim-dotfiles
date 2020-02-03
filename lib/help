@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+run_help() {
+
+cat <<EOT
+Dotfiles by Jorge Precich
+
+Usage: $(basename "$0") [options]
+
+Options:
+  -h, --help    Print this help text
+  --no-packages Supress pacakge updates
+  --no-sync     Suppress pulling from the remote repository
+
+Documentation can be found at https://github.com/YourSouLi5Mine/ysim-dotfiles/
+EOT
+
+}

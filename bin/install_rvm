@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-source $HOME/.dotfiles/lib/utils
+source ./lib/utils
 
 install_rvm() {
-  if type_exists "rvm"; then
+  if command_exists "rvm"; then
     header "rvm allready installed"
   else
     header "rvm not found, installing..."
