@@ -9,7 +9,7 @@ The installation will overwrite existing dotfiles in your $HOME and `.dotfiles, 
 ## How to install
 
 ```
-curl raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/dotfiles | bash
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/dotfiles | bash
 ```
 
 ### After installation
@@ -44,19 +44,27 @@ Further information: [TPM](https://github.com/tmux-plugins/tpm)
 [Zprezto](https://github.com/sorin-ionescu/prezto/tree/master/modules)
 Here are the prezto shortcuts I'm using:
 
-### Custom UNIX defaults
+## Scripts
 
-`osxdefaults`
+### If already downloaded the dotfiles
 
-## Change desktop background
+```
+osxdefaults
+background url image_name
+screensaver url image_name
+install_nvm
+install_rvm
+```
 
-`background url image_name`
+### If not
 
-## Change desktop screensaver
-
-`screensaver url image_name`
-
-
+```
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/osxdefaults | bash
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/background | bash url image_name
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/screensaver | bash url image_name
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/instalL_nvm | bash
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/instalL_rvm | bash
+```
 ### WYSIWYG
 
 ![nvim](/files/nvim.png)
