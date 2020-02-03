@@ -60,10 +60,10 @@ install_rvm
 
 ```
 curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/osxdefaults | bash
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/background | bash url image_name
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/screensaver | bash url image_name
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/instalL_nvm | bash
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/instalL_rvm | bash
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/background | bash -s url image_name
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/screensaver | bash -s url image_name
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/install_nvm | bash
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/install_rvm | bash
 ```
 ### WYSIWYG
 
