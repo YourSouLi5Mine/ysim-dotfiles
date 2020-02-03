@@ -71,3 +71,6 @@ fi
 
 header "Installing oh-my-zsh..."
 install_oh_my_zsh
+
+# Create the symbolic links
+ln -fs "${DOTFILES_PATH}/shell/zshrc" "${HOME}/.zshrc"
