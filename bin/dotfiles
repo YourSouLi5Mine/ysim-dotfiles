@@ -72,5 +72,17 @@ fi
 header "Installing oh-my-zsh..."
 install_oh_my_zsh
 
+# Install pure theme
+CUSTOM=$HOME/.oh-my-zsh/custom
+if [[ ! -d ${CUSTOM}/pure ]]; then
+  header "Downloading pure theme..."
+  git clone https://github.com/sindresorhus/pure $CUSTOM/pure
+  ln -s $CUSTOM/pure/pure.zsh $CUSTOM
+  ln -s $CUSTOM/pure/async.zsh $CUSTOM
+  success "Theme successfully installed"
+else
+  header "Theme already installed"
+fi
+
 # Create the symbolic links
 ln -fs "${DOTFILES_PATH}/shell/zshrc" "${HOME}/.zshrc"

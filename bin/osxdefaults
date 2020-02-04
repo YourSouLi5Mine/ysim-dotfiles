@@ -27,6 +27,11 @@ gsettings set org.gnome.desktop.interface document-font-name 'Fira Code 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Code 11'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Code Medium 12' 
 
+# Keyboard rate
+gsettings set org.gnome.desktop.peripherals.keyboard delay 500
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 28
+
+
 # Hotkeys
 # ------------------------------------------------------------------------------
 
@@ -72,16 +77,13 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys decrease-text-size '<
 gsettings set org.gnome.settings-daemon.plugins.media-keys increase-text-size '<Super>equal'
 
 # Lock screen
-gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Shift><Super>q']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Shift><Super>q'
 
 # General configurations
 # ------------------------------------------------------------------------------
 
 # Disable extensions
 gsettings set org.gnome.shell disable-user-extensions true
-
-# Enable night light
-gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 
 # Disable notifications in lock screen
 gsettings set org.gnome.desktop.notifications show-in-lock-screen  false
@@ -119,10 +121,7 @@ gsettings set org.gnome.Terminal.Legacy.Settings theme-variant 'dark'
 # Transparent terminal
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-transparency false
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-transparent-background true
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" background-transparency-percent 10
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" background-transparency-percent 5
 
 # Unlimited scrollbar
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollback-unlimited true
-
-# Keyboard rate. First number is the time to wait before the key pressed is repeated at the second number which is the rate
-xset r rate 300 50
