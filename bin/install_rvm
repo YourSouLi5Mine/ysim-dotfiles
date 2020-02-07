@@ -10,6 +10,7 @@ install_rvm() {
     sudo apt-add-repository -y ppa:rael-gc/rvm
     sudo apt update
     sudo apt install rvm
+    success "rvm installed"
   fi
 }
 

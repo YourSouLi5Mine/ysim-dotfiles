@@ -28,7 +28,7 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Code 11'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Code Medium 12' 
 
 # Keyboard rate
-gsettings set org.gnome.desktop.peripherals.keyboard delay 500
+gsettings set org.gnome.desktop.peripherals.keyboard delay 300
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 28
 
 

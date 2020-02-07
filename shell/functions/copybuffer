@@ -1,0 +1,7 @@
+copybuffer() {
+  echo $BUFFER | clipcopy
+}
+
+zle -N copybuffer
+bindkey "^O" copybuffer
+
