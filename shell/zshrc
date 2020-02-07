@@ -68,7 +68,15 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  autojump
+  colored-man-pages
+  git
+  #node
+  sudo
+  tmux
+  tmuxinator
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,3 +105,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+zstyle :prompt:pure:execution_time color 83
+zstyle :prompt:pure:git:branch color 40
+zstyle :prompt:pure:git:action color 40
+zstyle :prompt:pure:git:dirty color 9
+zstyle :prompt:pure:host color 244
+zstyle :prompt:pure:path color 32
+zstyle :prompt:pure:prompt:success color 82
+zstyle :prompt:pure:prompt:continuation color 136
+zstyle :prompt:pure:user color 244
+zstyle :prompt:pure:virtualenv color 40
