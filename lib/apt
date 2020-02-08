@@ -5,7 +5,11 @@ install_packages() {
   sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
   sudo apt update
-  sudo apt install -y git zsh tmux silversearcher-ag neovim gnome-tweaks autojump google-chrome-stable
+  sudo apt install -y git zsh tmux silversearcher-ag neovim gnome-tweaks autojump google-chrome-stable steam
   header "Installed packages..."
   success "git zsh tmux silversearcher-ag neovim gnome-tweaks autojump google-chrome-stable"
+  sudo snap install slack --classic
+  sudo snap install spotify
+  header "Installed snaps..."
+  success "slack spotify"
 }

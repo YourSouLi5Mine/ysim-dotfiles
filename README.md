@@ -1,52 +1,60 @@
-# ysim dotfiles :sunglasses:
-by: (Jorge Precich)
-compatibility: Linux
+# ysim dotfiles
+By Jorge Precich
 
-### Requirements
-
-The installation will overwrite existing dotfiles in your $HOME and `.dotfiles, .vim` directories.
+For Ubuntu 18.04
 
 ## How to install
 
+Your old `.zshrc`, `.vimrc`, `.tmux_conf`
+
 ```
+Dotfiles:
 curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/dotfiles | bash
+
+General setings:
+curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/osxdefaults | bash
 ```
 
-### After installation
+## Options
+
+```
+-h,  --help        Prints the help
+-np, --no-packages Suppress packages updates
+-ns, --no-sync     Suppress pulling from the remote repository
+```
+
+## After installation
 
 The first time opening nvim you have to use: `:PlugInstall` to install all the plugins, then: `:source ~/.vimrc`
 
+[vim-plug](https://github.com/junegunn/vim-plug)
+
 To get all tmux plugins to work run: `<C-B>U` and type `all` to update all the plugins.
 
-Further information: [TPM](https://github.com/tmux-plugins/tpm)
+[TPM](https://github.com/tmux-plugins/tpm)
 
 ## How to update
 
 `dotfiles`
 
-## Features
+## Packages
 
-### zsh
+```
+git zsh oh-my-zsh tmux silversearcher-ag neovim gnom-tweaks autojump google-chrome-stable steam
+```
 
-* [Prezto :green_heart:](https://github.com/sorin-ionescu/prezto)
+## Snaps
 
-### tmux
+```
+slack spotify
+```
 
-### nvim
-
-### Packages
-
-### Snaps
-
-### Shortcuts & Commands
+## Shortcuts & Commands
 
 [Aliases](/shell/shell_aliases)
-[Zprezto](https://github.com/sorin-ionescu/prezto/tree/master/modules)
-Here are the prezto shortcuts I'm using:
+[Functions](/shell/functions)
 
 ## Scripts
-
-### If already downloaded the dotfiles
 
 ```
 osxdefaults
@@ -56,15 +64,11 @@ install_nvm
 install_rvm
 ```
 
-### If not
+## Theme
 
-```
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/osxdefaults | bash
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/background | bash -s url image_name
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/screensaver | bash -s url image_name
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/install_nvm | bash
-curl -L https://raw.github.com/YourSouLi5Mine/ysim-dotfiles/master/bin/install_rvm | bash
-```
-### WYSIWYG
+![pure](https://github.com/sindresorhus/pure)
+
+## WYSIWYG
 
 ![nvim](/files/nvim.png)
+![terminal](/files/terminal.png)
