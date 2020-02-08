@@ -5,7 +5,7 @@ For Ubuntu 18.04
 
 ## How to install
 
-Your old `.zshrc`, `.vimrc`, `.tmux_conf`
+Your old `.zshrc`, `.vimrc`, `.tmux_conf` will be rename with a suffix `.old`
 
 ```
 Dotfiles:
@@ -51,7 +51,7 @@ slack spotify
 
 ## Shortcuts & Commands
 
-[Aliases](/shell/shell_aliases)
+[Aliases](/shell/aliases)
 [Functions](/shell/functions)
 
 ## Scripts
