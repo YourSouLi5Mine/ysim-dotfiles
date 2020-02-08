@@ -86,5 +86,12 @@ else
   header "Theme already installed"
 fi
 
+# Rename old dot files
+[ -f $HOME/.zshrc ] && mv $HOME/.zshrc $HOME/.zshrc.old
+[ -f $HOME/.vimrc ] && mv $HOME/.vimrc $HOME/.vimrc.old
+[ -f $HOME/.tmux.conf ] && mv $HOME/.tmux.conf $HOME/.tmux.conf.old
+
 # Create the symbolic links
 ln -fs "${DOTFILES_PATH}/shell/zshrc" "${HOME}/.zshrc"
+ln -fs "${DOTFILES_PATH}/shell/tmux_conf" "${HOME}/.tmux.conf"
+ln -fs "${DOTFILES_PATH}/shell/vimrc" "${HOME}/.vimrc"

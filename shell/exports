@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export EDITOR="nvim"
+export HISTCONTROL=ignoredups
+export HISTFILESIZE=10000
+export HISTIGNORE="ls:ls *:cd:cd -:pwd:exit:* --help:* -h"
