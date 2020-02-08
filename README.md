@@ -40,7 +40,7 @@ To get all tmux plugins to work run: `<C-B>U` and type `all` to update all the p
 ## Packages
 
 ```
-git zsh oh-my-zsh tmux silversearcher-ag neovim gnom-tweaks autojump google-chrome-stable steam
+curl wget git zsh oh-my-zsh tmux silversearcher-ag neovim gnom-tweaks autojump google-chrome-stable steam
 ```
 
 ## Snaps
