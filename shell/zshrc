@@ -72,7 +72,8 @@ plugins=(
   autojump
   colored-man-pages
   git
-  #node
+  node
+  rails
   sudo
   tmux
   tmuxinator
