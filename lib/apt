@@ -6,9 +6,9 @@ install_packages() {
 
   sudo add-apt-repository universe
   sudo apt update
-  sudo apt install -y curl wget git zsh tmux silversearcher-ag neovim gnome-tweaks autojump google-chrome-stable steam
+  sudo apt install -y curl wget git zsh tmux silversearcher-ag neovim gnome-tweaks autojump google-chrome-stable sysstat steam
   header "Installed packages..."
-  success "curl wget git zsh tmux silversearcher-ag neovim gnome-tweaks autojump google-chrome-stable"
+  success "curl wget git zsh tmux silversearcher-ag neovim gnome-tweaks autojump google-chrome-stable sysstat steam"
   sudo snap install slack --classic
   sudo snap install spotify
   header "Installed snaps..."

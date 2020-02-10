@@ -86,12 +86,27 @@ else
   header "Theme already installed"
 fi
 
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# vim plug
+VIM_PATH="${HOME}/.vim"
+[ -d $HOME/.vim ] && mv $HOME/.vim $HOME/.vim.old
+
+curl -fLo "${VIM_PATH}/autoload/plug.vim" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+mkdir "$VIM_PATH/plugged/"
+
 # Rename old dot files
 [ -f $HOME/.zshrc ] && mv $HOME/.zshrc $HOME/.zshrc.old
 [ -f $HOME/.vimrc ] && mv $HOME/.vimrc $HOME/.vimrc.old
 [ -f $HOME/.tmux.conf ] && mv $HOME/.tmux.conf $HOME/.tmux.conf.old
 
 # Create the symbolic links
+ln -fs "${DOTFILES_PATH}/shell/gitignore" "${HOME}/.gitignore"
+ln -fs "${DOTFILES_PATH}/shell/gitconfig" "${HOME}/.gitconfig"
 ln -fs "${DOTFILES_PATH}/shell/zshrc" "${HOME}/.zshrc"
 ln -fs "${DOTFILES_PATH}/shell/tmux_conf" "${HOME}/.tmux.conf"
 ln -fs "${DOTFILES_PATH}/shell/vimrc" "${HOME}/.vimrc"
+ln -fs "${DOTFILES_PATH}/shell/vimrc" "${HOME}/.config/nvim/init.vim"

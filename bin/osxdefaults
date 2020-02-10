@@ -60,7 +60,7 @@ gsettings set org.gnome.desktop.wm.keybindings maximize "['<Shift><Super>m']"
 gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Shift><Super>n']"
 
 # Swap ctrl-caps and alt-win
-gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'altwin:swap_alt_win', 'compose:lwin']"
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'altwin:swap_alt_win', 'compose:ralt']"
 
 # Open home
 gsettings set org.gnome.settings-daemon.plugins.media-keys home '<Super>e'

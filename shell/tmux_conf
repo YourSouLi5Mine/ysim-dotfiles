@@ -1,0 +1,69 @@
+set -g default-shell /bin/zsh
+
+unbind C-b
+set-option -g prefix C-a
+bind a send-prefix
+
+pane_resize="5"
+
+bind -n M-J resize-pane -D "$pane_resize"
+bind -n M-K resize-pane -U "$pane_resize"
+bind -n M-H resize-pane -L "$pane_resize"
+bind -n M-L resize-pane -R "$pane_resize"
+
+bind -n M-h select-pane -L
+bind -n M-l select-pane -R
+bind -n M-k select-pane -U
+bind -n M-j select-pane -D
+bind -n M-\ select-pane -l
+
+bind-key \ split-window -h
+bind-key | split-window -fh
+bind-key - split-window -v
+bind-key _ split-window -fv
+unbind '"'
+unbind %
+
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+setw -g mode-keys vi
+
+bind-key -T edit-mode-vi Up send-keys -X history-up
+bind-key -T edit-mode-vi Down send-keys -X history-down
+unbind-key -T copy-mode-vi Space ; bind-key -T copy-mode-vi v send-keys -X begin-selection
+unbind-key -T copy-mode-vi Enter ; bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel --clipboard --input"
+unbind-key -T copy-mode-vi C-v ; bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+unbind-key -T copy-mode-vi ] ; bind-key -T copy-mode-vi ] send-keys -X copy-selection
+
+set-option -g base-index 1
+set-window-option -g pane-base-index 1
+
+set -g @prefix_highlight_show_copy_mode 'on'
+set -g @prefix_highlight_prefix_prompt 'Prefix'
+set -g @prefix_highlight_copy_prompt 'Copy'
+set -g @prefix_highlight_output_prefix '< '
+set -g @prefix_highlight_output_suffix ' >'
+set -g @prefix_highlight_empty_prompt '        '
+set -g @prefix_highlight_empty_has_affixes 'on'
+set -g @prefix_highlight_empty_prompt 'Tmux'
+#set -g @prefix_highlight_empty_attr 'fg=default,bg=green'
+
+set -g @resurrect-strategy-nvim 'session'
+set -g @resurrect-processes 'ssh "~rails server" "~rails console"'
+
+set -g @continuum-restore 'on'
+
+set -g status-right-length 42
+set -g status-interval 5
+set -g status-right '#{prefix_highlight} | CPU: #{cpu_icon} #{cpu_percentage} | %d-%m-%Y %H:%M'
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-sessionist'
+
+run -b '~/.tmux/plugins/tpm/tpm'
+run-shell ~/clone/path/cpu.tmux
+run-shell ~/clone/path/continuum.tmux

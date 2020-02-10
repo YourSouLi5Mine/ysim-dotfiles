@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
 alias copydir="echo $PWD | clipcopy"
+alias gg="git grep"
